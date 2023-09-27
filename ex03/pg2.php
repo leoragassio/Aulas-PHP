@@ -46,7 +46,9 @@
         <img src="img/pg2-cod2.jpg" alt="Código da saida ao lado">
     </div>
     <p style="text-align: center;">Constante somente com <mark>CONCATENAÇÃO</mark></p>
-
+    <?php 
+        echo ' "Minotauro" ';
+    ?>
 
 
 </body>
