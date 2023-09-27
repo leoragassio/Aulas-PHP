@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interação com Formularios</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        form{
+            border:1px solid black ;
+            width: 50vw;
+            text-align: center;
+            margin: auto;
+            border-radius: 10px;
+
+        }
+        label {
+            padding: 10px;
+            margin: 10px;
+            width: 100%;
+        }
+        input{
+            
+            margin: 10px;
+            width:50%;
+        }
+        input[type="submit" i]{
+            width: 50%;
+            background-color: blue;
+            color: white;
+        }
+        input[type="submit" i]:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="recebe.php" method="get">
+        <label for="nome">Nome*</label>
+        <input type="text" name="nome" id="nome" required>
+        <br>
+        <label for="sobrenome">Sobrenome*</label>
+        <input type="text" name="sobrenome" id="sobrenome" required>
+        <br>
+        <input type="submit" placeholder="Enviar">
+    </form>
+</body>
+</html>
