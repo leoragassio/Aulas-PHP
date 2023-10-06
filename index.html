@@ -8,6 +8,11 @@
         *{
             font-size: 1.2rem;
             text-align: center;
+            padding: 0px;
+            margin: 0px;
+        }
+        #body2{
+            display: inline-flex;
         }
         summary{
             padding: 10px 0px;
@@ -18,49 +23,76 @@
         a::before{
             content: "📁";
         }
+        div#aulas{
+            width: 50vw;
+
+        }
+        div#desafios{
+            width: 50vw;
+        }
+        .p_aulas{
+            background-color: lightblue;
+            border-radius:10px;
+            padding:20px;
+            margin: 10px auto;
+            width: max-content;   
+        }
+        summary{
+            background-color: lightblue;
+            width: max-content;
+            margin: 20px auto;
+            border-radius:10px;
+            padding:10px;
+        }
         
     </style>
 </head>
 <body>
     <h1>Aulas de PHP</h1>
-    <p>Link das aulas</p>
-    <p><a href="ex00/index.php" class="link">Ex00</a></p>
-    <p><a href="ex01/index.php" class="link">Ex01</a></p>
-
-    <section>
-        <details>
-            <summary>
-                Ex02
-            </summary>
-            <a href="ex02/index.php" >Ex02</a>
-            <p><a href="ex02/pg2.php">Ex02/pg2</a></p>
-            <p><a href="ex02/pg3.php">Ex02/pg3</a></p>
-        </details>
-    </section>
-    
-    <p><a href="ex03/index.php" class="link">Ex03</a></p>
-
-    <section>
-        <details>
-            <summary>
-                Ex04
-            </summary>
-            <a href="ex04/index.html" >Ex04</a>
-            <p><a href="ex04/expressoes.php">Expressões.php</a></p>
-            <p><a href="ex04/expressoes2.php">Expressões 2.php</a></p>
-        </details>
-    </section>
-
-    <p>Link dos exercícios</p>
-    <section>
-        <details>
-            <summary>
-                Exercicios
-            </summary>
-            <a href="desafios/desafio1.php">Antecessor e Sucessor</a>
-            <p><a href="desafios/desafio2.php">Gerador de Numeros Aleatorios</a></p>
-            <p><a href="desafios/desafio3.php">Conversor de Moedas</a></p>
-        </details>
-    </section>
+    <div id="body2">
+        <div id="aulas">
+            <p class="p_aulas">Link das aulas</p>
+            <p class="p_aulas"><a href="ex00/index.php" class="link">Ex00</a></p>
+            <p class="p_aulas"><a href="ex01/index.php" class="link">Ex01</a></p>
+            <section>
+                <details>
+                    <summary>
+                        Ex02
+                    </summary>
+                    <a href="ex02/index.php" >Ex02</a>
+                    <p><a href="ex02/pg2.php">Ex02/pg2</a></p>
+                    <p><a href="ex02/pg3.php">Ex02/pg3</a></p>
+                </details>
+            </section>
+        
+            <p class="p_aulas"><a href="ex03/index.php" class="link">Ex03</a></p>
+            <section>
+                <details>
+                    <summary>
+                        Ex04
+                    </summary>
+                    <a href="ex04/index.html" >Ex04</a>
+                    <p><a href="ex04/expressoes.php">Expressões.php</a></p>
+                    <p><a href="ex04/expressoes2.php">Expressões 2.php</a></p>
+                </details>
+            </section>
+        </div>
+        <div id="desafios">
+            <p>Link dos desafios</p>
+            <section>
+                <details>
+                    <summary>
+                        Desafios
+                    </summary>
+                    <p class="p_aulas"><a href="desafios/desafio1/desafio1.php">Antecessor e Sucessor</a></p>
+                    <p class="p_aulas"><a href="desafios/desafio2/desafio2.php">Gerador de Números Aleatorios</a></p>
+                    <p class="p_aulas"><a href="desafios/desafio3/desafio3.php">Conversor de Moedas</a></p>
+                    <p class="p_aulas"><a href="desafios/analizar-real/index.php">Analizador de Número Real</a></p>
+                    <p class="p_aulas"><a href="desafios/desafio5/">Anatomia de uma divisão</a></p>
+                    <p class="p_aulas"><a href="desafios/desafio6/index.php">Calcular Salario Minimo</a></p>
+                </details>
+            </section>
+        </div>
+    </div>
 </body>
 </html>

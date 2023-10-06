@@ -7,9 +7,12 @@
 </head>
 <body>
     <?php 
-    $num = $_GET['num'];
-
-    var_dump($num);
+    $num = $_GET["num"];
+    echo "<p>O valor foi <strong>" . number_format($num,3,",",".") . "<strong> </p>";
+    $inteiro = (int)$num;
+    $fracionario = $num - $inteiro;
+    echo '<ul><li> O número inteiro é: <strong>' . number_format($inteiro, 0, ",", ".") . '</strong></li>' ;
+    echo "<li>O número fracionario é: <strong>" . number_format($fracionario,+3, ",", ".") . "</strong></li> </ul>"
     ?>
 </body>
 </html>
