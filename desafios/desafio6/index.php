@@ -25,10 +25,12 @@
     echo "<p><strong>Salario Minimo cotado em ". numfmt_format_currency($padrao_br,$salario_min,"BRL") ."</strong></p>";
     if($salario_inf < $salario_min){
         echo "Seu salario de $salario_inf não equivale a 1 salario minimo";
-    }else{
+    }else if($salario_inf == $salario_min ){
+        echo "<p>Seu salário de " . numfmt_format_currency($padrao_br,$salario_inf,"BRL")  . " equivale a ". round($qntd_salario,0) . " sálario minímo.</p>";
+    }
+    else{
         echo "<p>Seu salário de " . numfmt_format_currency($padrao_br,$salario_inf,"BRL")  . " equivale a ". round($qntd_salario,0) . " sálarios minímos e mais " . numfmt_format_currency($padrao_br,$rest_salario,"BRL") . ".</p>"  ;
     }
-    
     ?>
 </body>
 </html>
