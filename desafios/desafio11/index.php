@@ -1,36 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador Salário Minimo</title>
-    
+    <title>Calculadora de tempo</title>
 </head>
 <body>
     <?php 
-    $padrao_br= numfmt_create('pt_BR',NumberFormatter::CURRENCY);
-
-    $salario_min = "1320" ;
-    $salario_inf =  $_GET["salario_inf"] ?? 1;
-    $qntd_salario = $salario_inf/$salario_min ?? 1;
-    $rest_salario = $salario_inf%$salario_min ?? 1;
+    $segundos = $_GET["segundos"] ?? 0;
     ?>
-    <form action="<?php echo "$_SERVER[PHP_SELF]";?>" method="get">
-        <label for="salario_inf">Sálario</label>
-        <input type="number" name="salario_inf" id="salario_inf" placeholder="Digite aqui" start="0" value="<?= $salario_inf?>" required>
-
-        <input type="submit" value="Calcular">
+    <h1>Calculadora de tempo</h1>
+    <form action="<?=$_SERVER["PHP_SELF"]?>" method="get">
+    <label for="">Quantidade em segundos:</label>
+    <input type="number" name="segundos" id="segundos" value="<?=$segundos?>" min="0">
+    <input type="submit">
     </form>
-    <?php 
-    echo "<p><strong>Salario Minimo cotado em ". numfmt_format_currency($padrao_br,$salario_min,"BRL") ."</strong></p>";
-    if($salario_inf < $salario_min){
-        echo "Seu salario de $salario_inf não equivale a 1 salario minimo";
-    }else if($salario_inf == $salario_min ){
-        echo "<p>Seu salário de " . numfmt_format_currency($padrao_br,$salario_inf,"BRL")  . " equivale a ". round($qntd_salario,0) . " sálario minímo.</p>";
-    }
-    else{
-        echo "<p>Seu salário de " . numfmt_format_currency($padrao_br,$salario_inf,"BRL")  . " equivale a ". round($qntd_salario,0) . " sálarios minímos e mais " . numfmt_format_currency($padrao_br,$rest_salario,"BRL") . ".</p>"  ;
-    }
+    <?php
+    $minutos = $segundos / 60;
+    $horas =  $segundos / 3600;
+    $dias = $segundos / 86400;
+    $semanas = $segundos / 604800;
+
+
+    echo "<p>$segundos segundos tem $segundos segundos </p>";
+    echo "<p>$segundos segundos tem " . round($minutos,4) . " minuto(s)</p>";
+    echo "<p>$segundos segundos tem " . round($horas, 4). " hora(s)</p>";
+    echo "<p>$segundos segundos tem " . round($dias, 4). " dia(s)</p>";
+    echo "<p>$segundos segundos tem " . round($semanas, 4). " semana(s)</p>";
+
     ?>
     <footer>
         <a href="" target="_blank">Codigo GitHub <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
